@@ -24,7 +24,6 @@
 | ----------------- | ---------- | ------------ |
 | name              | string     | NOT NULL     |
 | introduction      | text       | NOT NULL     |
-| image             |            |              |
 | price             | integer    | NOT NULL     |
 | category_id       | integer    | NOT NULL     |
 | item_condition_id | integer    | NOT NULL     |
@@ -56,7 +55,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## address テーブル
+## addresses テーブル
 
 | Column           | Type       | Options      |
 | ---------------- | ---------- | ------------ |
