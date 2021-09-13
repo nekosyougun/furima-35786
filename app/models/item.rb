@@ -10,8 +10,8 @@ class Item < ApplicationRecord
   belongs_to :days_to_ship
 
   with_options presence: true do
-    validates :category, :prefecture, :item_condition, :days_to_ship, :delivery_cost, :introduction
+    validates :name, :introduction, :price, :user
   end
 
-  validates :category_id, :prefecture_id, :item_condition_id, :delivery_cost, :days_to_ship_id,  numericality: { other_than: 1 , message: "can't be blank"}
+  validates :category_id, :prefecture_id, :item_condition_id, :delivery_cost_id, :days_to_ship_id,  numericality: { other_than: 1 , message: "can't be blank"}
 end
