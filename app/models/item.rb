@@ -12,6 +12,6 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name, :introduction, :price, :user
   end
-
+  validates :price, format: { with: /\A[0-9]+\z/ }
   validates :category_id, :prefecture_id, :item_condition_id, :delivery_cost_id, :days_to_ship_id,  numericality: { other_than: 1 , message: "can't be blank"}
 end
