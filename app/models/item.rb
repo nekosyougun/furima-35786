@@ -10,7 +10,10 @@ class Item < ApplicationRecord
   belongs_to :days_to_ship
 
   with_options presence: true do
-    validates :name, :introduction, :price, :image
+    validates :name
+    validates :introduction
+    validates :price
+    validates :image
   end
   validates :price, format: { with: /\A[0-9]+\z/ }, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validates :category_id, :prefecture_id, :item_condition_id, :delivery_cost_id, :days_to_ship_id,  numericality: { other_than: 1 , message: "can't be blank"}
