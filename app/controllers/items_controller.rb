@@ -33,11 +33,10 @@ class ItemsController < ApplicationController
     end
   end
 
-def item_find
-  @item = Item.find(params[:id])
-end
-
   private
+  def item_find
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :text, :introduction, :price, :category_id, :prefecture_id, :days_to_ship_id,
