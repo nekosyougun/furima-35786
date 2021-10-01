@@ -5,7 +5,7 @@ RSpec.describe OrderAddress, type: :model do
     before do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
-      @order_address = FactoryBot.build(:order_address, user_id: user.id, item_id: item.id )
+      @order_address = FactoryBot.build(:order_address, user_id: user.id, item_id: item.id)
       sleep 0.1
     end
 
@@ -53,9 +53,9 @@ RSpec.describe OrderAddress, type: :model do
       it 'telephone_numberが10桁以上11桁以上だと保存できないこと' do
         @order_address.telephone_number = '090-1234-5678'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone number is invalid")
+        expect(@order_address.errors.full_messages).to include('Telephone number is invalid')
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_address.token = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
