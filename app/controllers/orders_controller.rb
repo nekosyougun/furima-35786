@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
     @order_address = OrderAddress.new
     @item = Item.find(params[:item_id])
     redirect_to root_path if @item.user_id == current_user.id
-    @item = Item.find(params[:item_id])
   end
 
   def new
