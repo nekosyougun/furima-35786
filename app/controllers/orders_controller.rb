@@ -4,17 +4,13 @@ class OrdersController < ApplicationController
   before_action :item_find, only: [:index, :create]
 
   def index
-    new_order
-    item_find
     redirect_to root_path if @item.user_id == current_user.id || !@item.order.nil?
   end
 
   def new
-    new_order
   end
 
   def create
-    item_find
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       pay_item
